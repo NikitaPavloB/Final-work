@@ -35,7 +35,7 @@ def get_file_info(directory):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Collect information about files and directories.")
-    parser.add_argument("directory_path", help="Path to the directory to analyze")
+    parser.add_argument("directory_path", help="Path to the directory to analyze. If the path contains spaces, enclose it in double quotes.")
 
     args = parser.parse_args()
 
