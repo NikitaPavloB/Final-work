@@ -21,21 +21,26 @@ logging.basicConfig(filename='file_info.log', level=logging.INFO, format='%(asct
 # Определение объекта namedtuple для хранения информации о файлах и каталогах
 FileInfo = namedtuple('FileInfo', ['name', 'extension', 'is_directory', 'parent_directory'])
 
+
 def get_file_info(directory):
     for item in os.listdir(directory):
         item_path = os.path.join(directory, item)
         if os.path.isfile(item_path):
             name, extension = os.path.splitext(item)
-            file_info = FileInfo(name=name, extension=extension, is_directory=False, parent_directory=os.path.basename(directory))
+            file_info = FileInfo(name=name, extension=extension, is_directory=False,
+                                 parent_directory=os.path.basename(directory))
             logging.info(f"File: {file_info}")
         elif os.path.isdir(item_path):
-            file_info = FileInfo(name=item, extension='', is_directory=True, parent_directory=os.path.basename(directory))
+            file_info = FileInfo(name=item, extension='', is_directory=True,
+                                 parent_directory=os.path.basename(directory))
             logging.info(f"Directory: {file_info}")
             get_file_info(item_path)
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Collect information about files and directories.")
-    parser.add_argument("directory_path", help="Path to the directory to analyze. If the path contains spaces, enclose it in double quotes.")
+    parser.add_argument("directory_path",
+                        help="Path to the directory to analyze. If the path contains spaces, enclose it in double quotes.")
 
     args = parser.parse_args()
 
