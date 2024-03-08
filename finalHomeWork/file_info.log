@@ -1,0 +1,4 @@
+2024-03-08 19:16:00,249 - File: FileInfo(name='file_info', extension='.log', is_directory=False, parent_directory='finalHomeWork')
+2024-03-08 19:16:00,249 - File: FileInfo(name='final_work', extension='.py', is_directory=False, parent_directory='finalHomeWork')
+2024-03-08 19:16:08,566 - File: FileInfo(name='file_info', extension='.log', is_directory=False, parent_directory='finalHomeWork')
+2024-03-08 19:16:08,566 - File: FileInfo(name='final_work', extension='.py', is_directory=False, parent_directory='finalHomeWork')
